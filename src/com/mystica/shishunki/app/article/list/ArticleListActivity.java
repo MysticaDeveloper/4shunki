@@ -2,15 +2,17 @@ package com.mystica.shishunki.app.article.list;
 
 import java.util.List;
 
-
 import org.androidannotations.annotations.AfterViews;
+import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
+import org.androidannotations.annotations.ItemClick;
 import org.androidannotations.annotations.ViewById;
 
 import android.support.v4.app.FragmentActivity;
 import android.widget.ListView;
 
 import com.mystica.shishunki.R;
+import com.mystica.shishunki.app.article.detail.ArticleDetailActivity_;
 import com.mystica.shishunki.dao.Article;
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -30,5 +32,9 @@ public class ArticleListActivity extends FragmentActivity {
 				listViewArticle.setAdapter(new ArticleListAdapter(instruments));
 			}
 		});
+	}
+	@ItemClick(R.id.listView1)
+	protected void openDetail() {
+		ArticleDetailActivity_.intent(this).start();
 	}
 }

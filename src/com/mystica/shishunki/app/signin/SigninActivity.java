@@ -13,6 +13,7 @@ import com.mystica.shishunki.R;
 import com.mystica.shishunki.app.article.list.ArticleListActivity_;
 import com.mystica.shishunki.app.signup.SignupActivity_;
 import com.mystica.shishunki.dao.Article;
+import com.mystica.shishunki.dao.Image;
 import com.parse.LogInCallback;
 import com.parse.Parse;
 import com.parse.ParseException;
@@ -32,6 +33,7 @@ public class SigninActivity extends FragmentActivity {
 	protected void init() {
 		Parse.initialize(this, "tb9z4W5lhHUuzwyyPTNGALb69KMuQEhrQQbBnxv7", "9azTcFYxpiIWC3vKVHGIoHedHOlWe1svF2zQf9Ob");
 		ParseObject.registerSubclass(Article.class);
+		ParseObject.registerSubclass(Image.class);
 		
 		etId.setText("mkawakami0304@gmail.com");
 		etPassword.setText("password");
