@@ -12,9 +12,11 @@ import android.widget.EditText;
 import com.mystica.shishunki.R;
 import com.mystica.shishunki.app.article.list.ArticleListActivity_;
 import com.mystica.shishunki.app.signup.SignupActivity_;
+import com.mystica.shishunki.dao.Article;
 import com.parse.LogInCallback;
 import com.parse.Parse;
 import com.parse.ParseException;
+import com.parse.ParseObject;
 import com.parse.ParseUser;
 
 @EActivity(R.layout.activity_signin)
@@ -29,6 +31,8 @@ public class SigninActivity extends FragmentActivity {
 	@AfterViews
 	protected void init() {
 		Parse.initialize(this, "tb9z4W5lhHUuzwyyPTNGALb69KMuQEhrQQbBnxv7", "9azTcFYxpiIWC3vKVHGIoHedHOlWe1svF2zQf9Ob");
+		ParseObject.registerSubclass(Article.class);
+		
 		etId.setText("mkawakami0304@gmail.com");
 		etPassword.setText("password");
 	}
