@@ -2,4 +2,8 @@
 
     <string name="app_name">com.mystica.shishunki</string>
 
+    <!-- AdMob settings -->
+    <string name="debug_device_id_c1905">7859CC8AD5EE6BE45FFD63B199A2F2D9</string>
+    <string name="admob_unit_id">ca-app-pub-7523573110671256/6848688122</string>
+
 </resources>
