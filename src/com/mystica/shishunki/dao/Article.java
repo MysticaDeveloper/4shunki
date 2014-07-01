@@ -1,10 +1,12 @@
 package com.mystica.shishunki.dao;
 
+import java.io.Serializable;
+
 import com.parse.ParseClassName;
 import com.parse.ParseObject;
 
 @ParseClassName("Article")
-public class Article extends ParseObject {
+public class Article extends ParseObject implements Serializable {
 
 	public Article() {
 		// TODO Auto-generated constructor stub

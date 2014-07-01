@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
+import org.androidannotations.annotations.Extra;
 import org.androidannotations.annotations.ViewById;
 
 import android.graphics.Bitmap;
@@ -12,6 +13,7 @@ import android.support.v4.app.FragmentActivity;
 import android.widget.ImageButton;
 
 import com.mystica.shishunki.R;
+import com.mystica.shishunki.dao.Article;
 import com.mystica.shishunki.dao.Image;
 import com.parse.FindCallback;
 import com.parse.GetDataCallback;
@@ -22,6 +24,8 @@ import com.parse.ParseQuery;
 @EActivity(R.layout.activity_article_image_assessment)
 public class ArticleImageAssessmentActivity extends FragmentActivity {
 
+    @Extra Article article;
+    
 	@ViewById(R.id.imageButton1)
 	protected ImageButton imImage1;
 	@ViewById(R.id.imageButton2)
@@ -29,7 +33,11 @@ public class ArticleImageAssessmentActivity extends FragmentActivity {
 
 	@AfterViews
 	protected void init() {
+		ParseQuery innerQuery = new ParseQuery(Article.class);
+		innerQuery.whereEqualTo("objectId", article.getObjectId());
+
 		ParseQuery<Image> woodwinds = ParseQuery.getQuery(Image.class);
+		woodwinds.whereMatchesQuery("Article", innerQuery);
 		woodwinds.findInBackground(new FindCallback<Image>() {
 			public void done(List<Image> image, ParseException exception) {
 				{

@@ -59,8 +59,8 @@ public class ArticleListActivity extends FragmentActivity {
 	}
 
 	@ItemClick(R.id.listView1)
-	protected void openDetail() {
-		ArticleDetailActivity_.intent(this).start();
+	protected void openDetail(Article article) {
+		ArticleDetailActivity_.intent(this).article(article).start();
 	}
 
 	@Override
