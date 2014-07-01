@@ -37,6 +37,10 @@ public class SigninActivity extends FragmentActivity {
 		
 		etId.setText("mkawakami0304@gmail.com");
 		etPassword.setText("password");
+
+		// FIXME: Google+逋ｻ骭ｲ
+		// FIXME: Twitter逋ｻ骭ｲ
+		// FIXME: Facebook逋ｻ骭ｲ
 	}
 
 	@Click(R.id.button1)
@@ -44,10 +48,7 @@ public class SigninActivity extends FragmentActivity {
 		ParseUser.logInInBackground(etId.getText().toString(), etPassword.getText().toString(), new LogInCallback() {
 			public void done(ParseUser user, ParseException e) {
 				if (user != null) {
-					Log.d(TAG, "ログイン成功");
 					ArticleListActivity_.intent(SigninActivity.this).start();
-				} else {
-					Log.e(TAG, "エラーによりログイン失敗");
 				}
 			}
 		});

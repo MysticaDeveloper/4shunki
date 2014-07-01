@@ -34,6 +34,10 @@ public class SignupActivity extends FragmentActivity {
 		etId.setText("mkawakami0304@gmail.com");
 		etPassword.setText("password");
 		etEmail.setText("mkawakami0304@gmail.com");
+		
+		// FIXME: Google+逋ｻ骭ｲ
+		// FIXME: Twitter逋ｻ骭ｲ
+		// FIXME: Facebook逋ｻ骭ｲ
 	}
 
 	@Click(R.id.button1)
@@ -48,8 +52,6 @@ public class SignupActivity extends FragmentActivity {
 			public void done(ParseException e) {
 				if (e == null) {
 					SigninActivity_.intent(SignupActivity.this).start();
-				} else {
-					Log.e(TAG, "エラーによりサインアップ失敗");
 				}
 			}
 		});
