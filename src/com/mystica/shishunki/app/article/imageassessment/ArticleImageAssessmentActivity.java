@@ -38,36 +38,6 @@ public class ArticleImageAssessmentActivity extends FragmentActivity {
 
 	@AfterViews
 	protected void init() {
-		ParseQuery innerQuery = new ParseQuery(Article.class);
-		innerQuery.whereEqualTo("objectId", article.getObjectId());
-
-		// FIXME:画像２種類を選定する方法野検討
-		ParseQuery<Image> woodwinds = ParseQuery.getQuery(Image.class);
-		woodwinds.whereMatchesQuery("Article", innerQuery);
-		woodwinds.findInBackground(new FindCallback<Image>() {
-			public void done(List<Image> image, ParseException exception) {
-				{
-					image1 = image.get(0);
-					ParseFile fileObject = (ParseFile) image1.getImage();
-					fileObject.getDataInBackground(new GetDataCallback() {
-						public void done(byte[] data, ParseException e) {
-							Bitmap bmp = BitmapFactory.decodeByteArray(data, 0, data.length);
-							imImage1.setImageBitmap(bmp);
-						}
-					});
-				}
-				{
-					image2 = image.get(1);
-					ParseFile fileObject = (ParseFile) image2.getImage();
-					fileObject.getDataInBackground(new GetDataCallback() {
-						public void done(byte[] data, ParseException e) {
-							Bitmap bmp = BitmapFactory.decodeByteArray(data, 0, data.length);
-							imImage2.setImageBitmap(bmp);
-						}
-					});
-				}
-			}
-		});
 	}
 
 	@Click(R.id.imageButton1)

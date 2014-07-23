@@ -43,7 +43,6 @@ public class ArticleListActivity extends FragmentActivity {
 		 */
 		adView = new AdView(this);
 		adView.setAdUnitId(getResources().getString(R.string.admob_unit_id));
-//		adView.setAdSize(AdSize.BANNER);
 		adView.setAdSize(AdSize.SMART_BANNER);
 
 		LinearLayout layout_ad_footer = (LinearLayout) findViewById(R.id.layout_ad_footer);
@@ -56,6 +55,7 @@ public class ArticleListActivity extends FragmentActivity {
 				.build();
 
 		adView.loadAd(adRequest);
+		
 	}
 
 	@ItemClick(R.id.listView1)

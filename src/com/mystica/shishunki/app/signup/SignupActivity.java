@@ -6,7 +6,6 @@ import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
 
 import android.support.v4.app.FragmentActivity;
-import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 
